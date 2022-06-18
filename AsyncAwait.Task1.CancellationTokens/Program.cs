@@ -36,7 +36,7 @@ internal class Program
                 cancellation?.Cancel();
                 cancellation?.Dispose();
                 cancellation = new CancellationTokenSource();
-                CalculateSum(n, cancellation.Token).ConfigureAwait(false);
+                CalculateSumAsync(n, cancellation.Token).ConfigureAwait(false);
             }
             else
             {
@@ -54,7 +54,7 @@ internal class Program
         Console.ReadLine();
     }
 
-    private static async Task CalculateSum(int n, CancellationToken token)
+    private static async Task CalculateSumAsync(int n, CancellationToken token)
     {
         Console.WriteLine($"The task for {n} started... Enter N to cancel the request:");
 
